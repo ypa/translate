@@ -10,10 +10,10 @@ export class LanguageStore extends React.Component {
   }
 
   render() {
+    // Wrapping the children components with the context provider so that
+    // they all can access the context object passsed in value prop.
     return (
       <Context.Provider value={{ ...this.state, onLanguageChange: this.onLanguageChange }}>
-        // Wrapping the children components with the context provider so that
-        // they all can access the context object passsed in value prop.
         {this.props.children}
       </Context.Provider>
     );
